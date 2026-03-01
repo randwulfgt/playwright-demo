@@ -21,21 +21,7 @@ End-to-end tests for the [QA Practice](https://qa-practice.razvanvancea.ro) logi
    npx playwright install
    ```
 
-3. **Configure environment**
-
-   Copy `.env.example` to `.env` and add your credentials:
-
-   ```bash
-   cp .env.example .env
-   ```
-
-   Edit `.env` and set:
-
-   - `LOGIN_EMAIL` – valid login email (required)
-   - `LOGIN_PASSWORD` – valid login password (required)
-   - `BASE_URL` – base URL for the app (optional; defaults to https://qa-practice.razvanvancea.ro)
-
-   The `.env` file is gitignored and will not be committed.
+   Tests use the demo site’s public credentials by default. Optionally, copy `.env.example` to `.env` to override `BASE_URL`, `LOGIN_EMAIL`, or `LOGIN_PASSWORD`.
 
 ## Running Tests
 
@@ -60,12 +46,12 @@ Tests run in **headless mode** and **concurrently** by default.
 ```
 playwright-demo/
 ├── config/
-│   └── env.ts               # Environment config (reads from .env)
+│   └── env.ts               # Environment config (demo defaults, optional .env override)
 ├── pages/
 │   └── LoginPage.ts         # Login page object
 ├── tests/
 │   └── loginPage.spec.ts
-├── .env.example             # Template for required env vars
+├── .env.example             # Optional env overrides (copy to .env)
 ├── playwright.config.ts
 └── package.json
 ```
@@ -84,3 +70,4 @@ playwright-demo/
 | Headless | `true` (headless by default) |
 | Workers | Default (concurrent) |
 | Base URL | https://qa-practice.razvanvancea.ro |
+| Credentials | admin@admin.com / admin123 (demo site) |
