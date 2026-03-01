@@ -39,7 +39,7 @@ export class LoginPage {
 
   /* Actions */
   async goto() {
-    await this.page.goto(this.url);
+    await this.page.goto(this.url, { waitUntil: 'domcontentloaded' });
   }
 
   async fillEmail(email: string) {

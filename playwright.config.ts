@@ -29,6 +29,9 @@ export default defineConfig({
     /* Run in headless mode by default */
     headless: true,
 
+    /* Allow more time for navigation (e.g. slow or remote sites) */
+    navigationTimeout: 60_000,
+
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
   },
