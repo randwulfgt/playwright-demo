@@ -9,8 +9,6 @@ loadEnv({ path: path.resolve(__dirname, '.env') });
  */
 export default defineConfig({
   testDir: './tests',
-  /* Default timeout per test (includes navigation and actions) */
-  timeout: 60_000,
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -28,9 +26,6 @@ export default defineConfig({
 
     /* Run in headless mode by default */
     headless: true,
-
-    /* Allow more time for navigation (e.g. slow or remote sites) */
-    navigationTimeout: 60_000,
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',

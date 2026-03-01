@@ -11,7 +11,6 @@ test.describe('login', () => {
         await expect(page).toHaveURL(loginPage.url);
         await expect(loginPage.shoppingCart).toBeVisible();
         await expect(loginPage.logOut).toBeVisible();
-        // commit test
     });
 
     test('login with invalid password', async ({ page }) => {
