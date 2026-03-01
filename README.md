@@ -42,7 +42,7 @@ End-to-end tests for the [QA Practice](https://qa-practice.razvanvancea.ro) logi
 npx playwright test
 ```
 
-Tests run in **headed mode** (browser visible) and **sequentially** (one at a time) by default.
+Tests run in **headless mode** and **concurrently** by default.
 
 ### Useful Commands
 
@@ -50,8 +50,8 @@ Tests run in **headed mode** (browser visible) and **sequentially** (one at a ti
 |---------|-------------|
 | `npx playwright test` | Run all tests |
 | `npx playwright test --project=chromium` | Run tests in Chromium only |
-| `npx playwright test --headed` | Run in headed mode (default) |
-| `npx playwright test --headless` | Run in headless mode |
+| `npx playwright test --headed` | Run in headed mode (browser visible) |
+| `npx playwright test --headless` | Run in headless mode (default) |
 | `npx playwright show-report` | Open the last HTML report |
 
 ## Project Structure
@@ -91,6 +91,6 @@ Set `LOGIN_EMAIL` and `LOGIN_PASSWORD` as repository secrets for CI.
 | Setting | Default |
 |---------|---------|
 | Browsers | Chromium, Firefox, WebKit |
-| Headless | `false` (headed by default) |
-| Workers | 1 (sequential) |
+| Headless | `true` (headless by default) |
+| Workers | Default (concurrent) |
 | Base URL | https://qa-practice.razvanvancea.ro |
